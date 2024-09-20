@@ -1,0 +1,80 @@
+.navbar-brand{
+    width: 30px;
+    height: 30px;
+}
+.nav-link{
+    font-weight: 600;
+    font-size: large;
+}
+.banner{
+    height: 200px;
+}
+.text{
+    font-family:"Kaushan Script";
+    text-align: center;
+}
+.imgbanner1{
+    text-align: center;
+}
+.thoigian{
+    text-align: center;
+    padding-top:20px ;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.mua_sale{
+    display: flex;
+}
+.banner{
+    height: 406px;
+}
+.mybox{
+    width: 210px;
+    height: 194px;
+    background-color: #fff;
+    border-radius: 15%;
+}
+
+.mybox2{
+    display: flex;
+    background-color: #fff;
+    border-radius: 60px;
+    width: 280px;
+    height: 80px;
+    padding: 15px;
+    margin-left: 100px;
+}
+.row{
+    margin: 0;
+}
+a:hover {
+    text-decoration: none;
+}
+h4{
+    color: red;
+}
+ul.myul {
+    list-style-type: none; /* Xóa dấu chấm mặc định */
+}
+
+ul.myul li {
+    position: relative;
+    padding-left: 20px; /* Khoảng cách từ dấu chấm đến nội dung */
+}
+
+ul.myul li::before {
+    content: '•'; /* Biểu tượng dấu chấm */
+    color: #fff; /* Đổi màu dấu chấm */
+    position: absolute;
+    left: 0;
+}
+ul.myul li a{
+    color: #fff;
+}
+
+/* CSS phần cửa hàng(shop) */
+#baner_login{
+    padding-left: 0;
+    padding-right: 0;
+}
+
