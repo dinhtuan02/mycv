@@ -1,0 +1,99 @@
+@media (max-width: 1024px) {
+    .slidershow {
+        height: 500px;
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        padding: 20px;
+    }
+
+    header label {
+        display: initial;
+        position: absolute;
+        left: 17px;
+    }
+
+    header .logo {
+        transform: translateX(60%);
+    }
+
+    header .logo img{
+       width: 120px;
+       height: 50px;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #fff;
+        border-top: 1px solid rgba(0, 0, 0, .1);
+        display: none;
+    }
+
+    header .navbar ul li {
+        width: 100%;
+    }
+
+    header .navbar ul li a::after {
+        content: none;
+    }
+
+    header .navbar ul li  a:hover {
+        color: red;
+        transition: all 0.3s ease;
+    }
+
+    header .navbar ul li ul {
+        position: relative;
+        width: 100%;
+        left: 20px;
+    }
+
+    header .navbar ul li ul li{
+        border: none;
+    }   
+
+    header .navbar ul li ul li ul {
+        width: 100%;
+        left: 0;
+    }
+
+    header #menu-bar:checked ~ .navbar {
+        display: initial;
+        z-index: 1;
+    }
+
+    header .icon .trai_tim {display: none;}
+
+    .slidershow {
+        height: 550px;
+    }
+
+    .quangba {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sub_quangba {
+        width: 100%;
+        margin: 3px 15px;
+    }
+
+    .sub_quangba .img_sub_quangba img {
+        width: 100%;
+        height: 230px;
+    }
+
+    .sub_quangba .anh3 .chu_sub_quangba{
+        position: absolute;
+        top: 80px;
+        left: 150px;
+        font-size: 25px;
+    }
+
+    .pd-mobile {
+        padding: 0 10px;
+    }
+}

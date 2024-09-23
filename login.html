@@ -9,6 +9,7 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="style/responsive_index.css">
     <link rel="stylesheet" href="./style/login.css">
     <script src="./js/vue.js"></script>
 </head>
@@ -18,72 +19,103 @@
             <!-- Navigation Bar -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
                 <div class="container">
-                    <!-- Logo hoặc tên thương hiệu -->
-                     <div>
-                        <a class="navbar-brand" href="index.html">
-                            <img src="./img/lg.png" alt="" style="width: 114px;height: 42px;">
-                        </a>
-                     </div>
-
-                    <!-- Nút bấm để thu gọn menu trên thiết bị di động -->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-        
-                    <!-- Menu, form tìm kiếm, và các mục điều hướng -->
-                    <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: center;">
-                        <!-- Danh sách các mục trong thanh điều hướng -->
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Trang Chủ <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="shop_1.html">Cửa Hàng</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Dịch Vụ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Liên Hệ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Giới Thiệu</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="collapse navbar-collapse justify-content-end">
-                        <ul class="navbar-nav">
-                            <!-- Account Icon -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.html">
-                                <i class="fas fa-user" style="font-size: 24px;"></i>
-                                </a>
-                            </li>
-                            <!-- Cart Icon -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="shopping_cart.html">
-                                <i class="fas fa-shopping-cart" style="font-size: 24px;"></i>
-                                </a>
-                            </li>
-                            <!-- Wishlist Icon -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                <i class="fas fa-heart" style="font-size: 24px;"></i>
-                                </a>
-                            </li>
-                            <!-- Search Icon -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                <i class="fas fa-search" style="font-size: 24px;"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <header>
+                        <div class="logo">
+                            <a href="index.html" class="logo"><img src="./img/lg.png" alt=""></a>
+                        </div>
+            
+                        <input type="checkbox" id="menu-bar">
+                        <label for="menu-bar"><i class="fas fa-bars"></i></label>
+                        
+                        <div class="navbar">
+                            <ul>
+                                <li><a href="index.html">Trang chủ</a></li>
+                                <li><a href="#">Giới thiệu</a></li>
+                                <li><a href="#">Sản phẩm <i class="fa-solid fa-chevron-down"></i></a>
+                                    <!-- Nước Hoa Bộ -->
+                                    <ul>
+                                        <li>
+                                            <a href="#">Nước Hoa Bộ <i class="fa-solid fa-chevron-down i_menu2"></i></a>
+                                            <ul>
+                                                <li><a href="#">Nước Hoa Bộ Nam Tính</a></li>
+                                                <li><a href="#">Nước Hoa Bộ Nữ Tính</a></li>
+                                            </ul>
+                                        </li>  
+                                        
+                                        <!-- Nước Hoa Buổi Tối -->
+                                        <li>
+                                            <a href="#">Nước Hoa Buổi Tối <i class="fa-solid fa-chevron-down i_menu2"></i></a>
+                                            <ul>
+                                                <li><a href="#">Nước Hoa Buổi Tối Quyến Rũ</a></li>
+                                                <li><a href="#">Nước Hoa Buổi Tối Sang Trọng</a></li>
+                                            </ul>
+                                        </li>  
+            
+                                        <!-- Nước Hoa Cổ Điển -->
+                                        <li>
+                                            <a href="#">Nước Hoa Cổ Điển<i class="fa-solid fa-chevron-down i_menu2"></i></a>
+                                            <ul>
+                                                <li><a href="#">Nước Hoa Cổ Điển Hiện Đại</a></li>
+                                                <li><a href="#">Nước Hoa Cổ Điển Sang Trọng</a></li>
+                                            </ul>
+                                        </li> 
+            
+                                        <!-- Nước Hoa Hàng Ngày -->
+                                        <li>
+                                            <a href="#">Nước Hoa Hàng Ngày<i class="fa-solid fa-chevron-down i_menu2"></i></a>
+                                            <ul>
+                                                <li><a href="#">Nước Hoa Hàng Ngày Nhẹ Nhàng</a></li>
+                                                <li><a href="#">Nước Hoa Hàng Ngày Nổi Bật</a></li>            
+                                            </ul>
+                                        </li>   
+            
+                                        <!-- Nước Hoa Hiện Đại -->
+                                        <li>
+                                            <a href="#">Nước Hoa Hiện Đại<i class="fa-solid fa-chevron-down i_menu2"></i></a>
+                                            <ul>
+                                                <li><a href="#">Nước Hoa Hiện Đại Cá Tính</a></li>
+                                                <li><a href="#">Nước Hoa Hiện Đại Tươi Mát</a></li>            
+                                            </ul>
+                                        </li>  
+            
+                                        <!-- Nước Hoa Nam -->
+                                        <li>
+                                            <a href="#">Nước Hoa Nam<i class="fa-solid fa-chevron-down i_menu2"></i></a>
+                                            <ul>
+                                                <li><a href="#">Nước Hoa Nam Cổ Điển</a></li>
+                                                <li><a href="#">Nước Hoa Nam Hiện Đại</a></li>     
+                                                <li><a href="#">Nước Hoa Nam Thể Thao</a></li>     
+                                            </ul>
+                                        </li>  
+            
+                                        <!-- Nước Hoa Nữ -->
+                                        <li>
+                                            <a href="#">Nước Hoa Nữ<i class="fa-solid fa-chevron-down i_menu2"></i></a>
+                                            <ul>
+                                                <li><a href="#">Nước Hoa Nữ Ngọt Ngào</a></li>
+                                                <li><a href="#">Nước Hoa Nữ Quyến Rũ</a></li>     
+                                                <li><a href="#">Nước Hoa Nữ Sang Trọng</a></li>     
+                                            </ul>
+                                        </li>    
+                                    </ul>                                                                       
+                                </li>
+                                <li><a href="#">Tin tức</a></li>
+                                <li><a href="#">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                
+                        <div class="icon">
+                            <a href="login.html"><i class="fa-solid fa-user"></i></a>
+                            <a href="shopping_cart.html"><i class="fas fa-shopping-cart"></i></a>
+                            <a href=""><i class="fa-solid fa-heart trai_tim"></i></a>
+                            <a href=""><i class="fa-solid fa-magnifying-glass tim_kiem"></i></a>
+                        </div>
+                    </header>
                 </div>
             </nav>
         </div>
         
-        <div class="banner">
+        <div class="banner" style="margin-top: 60px;">
             <div class="row content" >
                 <div class="content1 col-md-12 pb-5" style="padding: 0;">
                     <div class="row">
@@ -114,9 +146,9 @@
                                 <button type="submit" style="font-weight: bold;background-color: red;width: 100px;height: 40px;border: 1px solid #fff;border-radius: 10px;color: #fff;float: right;" @click="checkLogin">Login</button>
                                 <br>
                                 <p>
-                                    <a href="register.html">Register</a>
+                                    <a href="#">Register</a>
                                     <span> / </span>
-                                    <a href="lost-password.html">Lost your password?</a>
+                                    <a href="#">Lost your password?</a>
                                 </p>
                             </form>
                             

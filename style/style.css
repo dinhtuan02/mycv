@@ -47,7 +47,7 @@
 .row{
     margin: 0;
 }
-a:hover {
+a {
     text-decoration: none;
 }
 h4{
@@ -77,4 +77,326 @@ ul.myul li a{
     padding-left: 0;
     padding-right: 0;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+body {
+    min-height: 100vh;
+}
+
+#warper {
+    max-width: 100%; /**mức chiều rọng cho phép */
+    margin: 0 auto;
+    width: 1519px; /**chiều rộng mặc định */     
+}
+
+
+/* style header */
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    padding: 10px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo img{
+    width: 180px;
+    height: 70px;
+}
+
+header .navbar ul li {
+    position: relative;
+    float: left;
+    list-style: none;
+}
+
+header .navbar ul li a {
+    font-size: 15px;
+    padding: 20px;
+    color: #333;
+    display: block;
+    text-decoration: none;
+}
+
+a .i_menu2 {
+    transition: transform 0.3s ease;
+}
+
+a:focus .i_menu2 {
+    transform: rotate(-90deg);
+}
+
+header .navbar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    bottom: 15px; /* Khoảng cách gạch chân với chữ */
+    width: 65%; /* Độ dài của gạch chân  */
+    height: 2px; /* Độ dày của gạch chân */
+    background-color: #333; 
+    transform: scaleX(0); /* Ẩn gạch chân ban đầu */
+    transition: transform 0.3s ease; /* Thay đổi tốc độ chuyển động */
+}
+
+header .navbar ul li a:hover::after {
+    transform: scaleX(1); /* Hiển thị gạch chân khi hover */
+    transform-origin: bottom left; /* Thay đổi điểm gốc để hiệu ứng chạy từ trái sang phải */
+}
+
+/* Loại bỏ gạch chân cho tất cả các liên kết */
+header .navbar ul li ul li a::after {
+    text-decoration: none;
+    content: none;
+}
+
+header .navbar ul li ul {
+    position: absolute;
+    left: 0;
+    width: 250px;
+    background: #fff;
+    display: none;
+}
+
+header .navbar ul li ul li {
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+header .navbar ul li ul li ul {
+    left: 200px;
+    top: 0;
+}
+
+header .navbar ul li:focus-within > ul {
+    display: initial;
+    transition: all 0.3s;
+}
+
+/* Không có gạch chân khi hover vào liên kết menu con */
+header .navbar ul li ul li a:hover {
+    text-decoration: none; 
+    background-color: #f0f0f0;
+}
+
+header .icon a { color: black; }
+   
+header .icon a i { font-size: 25px; margin: 0 5px; }
+
+header #menu-bar {
+    display: none;
+}
+
+header label {
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    display: none;  
+}
+
+.slidershow {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slider-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 740px;
+    object-fit: cover;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.indicators button {
+    border: none;
+    background-color: white;
+    padding: 5px;
+    margin: 0 2px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.indicators .active {
+    background-color: #333;
+}
+
+/* style quangba */
+.quangba {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.sub_quangba {
+    width: 30%;
+    margin: 0 20px;
+}
+
+.sub_quangba .anh1,.anh2,.anh3 {
+    position: relative;
+}
+
+.sub_quangba .img_sub_quangba img {
+    width: 459.99px;
+    height: 258.74px;
+}
+
+.sub_quangba .img_sub_quangba:hover {
+    transform: scale(1.02);
+    transition-timing-function: ease-in-out;
+    transition: 0.3s ease;
+}
+
+.sub_quangba .anh1 .chu_sub_quangba{
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    font-size: 25px;
+}
+
+.sub_quangba .anh2 .chu_sub_quangba{
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    font-size: 25px;
+}
+
+.button-hover {
+    padding: 8px 30px;
+    background-color: #fff;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-hover a {
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.button-hover:hover {
+    background-color: black;
+}
+
+.button-hover:hover a {
+    color: white;
+}
+
+
+.sub_quangba .anh3 .chu_sub_quangba{
+    position: absolute;
+    top: 80px;
+    left: 250px;
+    font-size: 25px;
+}
+
+/* style sanpham */
+.sanpham {
+    width: 100%;
+}
+
+.sanpham .tieude_sanpham {
+    text-align: center;
+}
+
+.sanpham .tieude_sanpham p {
+    color: #333333;
+    font-size: 28px;
+    text-transform: capitalize;
+}
+
+.ul_sanpham_tab {
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.sanpham .ul_sanpham_tab {
+    transform: translateX(30%);
+}
+
+.sanpham .ul_sanpham_tab ul li {
+    float: left;
+    list-style-type: none;
+    margin: 0 20px;
+    position: relative;
+}
+
+.sanpham .ul_sanpham_tab ul li a {
+    color: #AAA; /* Màu mặc định */
+    font-size: 18px;
+    position: relative; /* Để tạo hiệu ứng cho gạch chân */
+    padding-bottom: 5px; /* Khoảng cách giữa văn bản và gạch chân */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.sanpham .ul_sanpham_tab ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0; /* Đặt gạch chân ở dưới */
+    width: 0;
+    height: 1px; 
+    background-color: #333; /* Màu gạch chân */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.sanpham .ul_sanpham_tab ul li a:hover,
+.sanpham .ul_sanpham_tab ul li a.active {
+    color: black; 
+}
+
+.sanpham .ul_sanpham_tab ul li a:hover::after,
+.sanpham .ul_sanpham_tab ul li a.active::after {
+    width: 100%; /* Mở rộng gạch chân khi hover hoặc active */
+    left: 0; /* Đưa gạch chân về bên trái */
+}
+
+
 
