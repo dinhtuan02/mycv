@@ -178,7 +178,7 @@ header .navbar ul li ul li ul {
     top: 0;
 }
 
-header .navbar ul li:focus-within > ul {
+header .navbar ul li:hover > ul {
     display: initial;
     transition: all 0.3s;
 }
