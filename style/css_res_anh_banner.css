@@ -1,0 +1,39 @@
+/* Media queries cho mobile */
+@media (max-width: 768px) {
+    .responsive-img {
+        height: 350px;
+    }
+    
+    .banner img {
+        min-height: auto; /* Tăng chiều dài ảnh trên thiết bị di động nhưng không vượt quá kích thước chứa */
+        width: 100%;
+        object-fit: cover; /* Giữ tỉ lệ và cắt ảnh nếu cần */
+    }
+
+    .anh1 {
+        margin: 0 auto; /* Căn giữa container nếu cần */
+        padding: 0; /* Loại bỏ padding nếu có */
+        width: 100%; 
+    }
+    
+    .anh1 img {
+        margin-left: 0 !important; 
+        width: 100%; 
+        height: auto; 
+    }
+
+    .chu_cakes_and_bakes {
+        margin-left: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Căn giữa theo trục ngang */
+        text-align: center; /* Căn giữa nội dung văn bản */
+        padding: 0 25px;
+    }
+
+    .content3 .anh1 {  order: 1; /* Đặt ảnh lên phía trước */ }
+       
+    .content3 .chu_cakes_and_bakes { order: 2; /* Đặt chữ phía sau ảnh */ }
+        
+    
+}

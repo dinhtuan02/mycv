@@ -11,7 +11,7 @@ var index = new Vue({
       checkMessage() {
         // Nếu thông điệp không rỗng, hiển thị nó
         if (this.ten.trim()  !== '' &&  this.email.trim()  !== '' && this.soNguoi.trim()  !== '' && this.Sdt.trim()  !== '') {
-          alert("Đặt bàn thành công. Tin nhắn đã được gửi đến bộ phận xử lí của cửa hàng.")
+          alert("Đặt bàn thành công")
           // this.outputMessage = 'Cảm ơn bạn đã gửi tin nhắn. Tin nhắn đã được gửi đến bộ phận xử lí của cửa hàng.';
         } else {
           alert("Bạn cần điền đầy đủ thông tin để đặt bàn")

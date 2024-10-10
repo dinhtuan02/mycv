@@ -11,7 +11,65 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="style/responsive_index.css">
     <script src="./js/vue.js"></script>
-    
+    <style>
+        .product-list {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        .product-item {
+          border: 1px solid #ddd;
+          padding: 10px;
+          margin: 10px;
+          width: calc(33.33% - 20px);
+          box-sizing: border-box;
+          text-align: center;
+        }
+        .product-item img {
+          display: block;
+          margin: 0 auto 10px;
+          transition: transform 0.5s ease;
+        }
+        .product-item:hover img {
+            transform: scale(1.08); /* Phóng to ảnh lên 20% */
+        }
+        /* Thiết lập khi ở chế độ di động */
+        @media (max-width: 768px) {
+        .product-item {
+            width: 100%; /* 1 sản phẩm trên 1 hàng */
+            margin-left: 0;
+            margin-right: 0;
+        }
+        }
+        .mua_ngay{
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color:red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .mua_ngay:hover {
+            transform: translateY(-5px); /* Nổi lên */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+        }
+        .them_gio_hang{
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color:green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .them_gio_hang:hover {
+            transform: translateY(-5px); /* Nổi lên */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+        }
+      </style>
 </head>
 <body>
     <div id="app">
@@ -134,162 +192,53 @@
         </div>
         <div class="banner" style="margin-top: 60px;">
             <div class="row content" >
-                <div class="content1 col-md-12 pb-5" style="background-color: pink;">
+                <div class="content1 col-md-12 pb-5" style="background-color: #4a144b;">
                     <div class="row">
-                        <div class="col-md-5 mt-5 mb-5">
-                            <p class="text_sale" style="color: red;padding-left: 40px;font-size: 20px;">Giảm giá 10% cho đơn từ 4 bánh</p>
-                            <h1 class="text" style="color:#4a144b;font-style:normal;font-weight:bold">Bánh nướng hoàn hảo mỗi ngày!</h1>
-                            <div class="mua_sale" style="padding-left: 20px;padding-top: 30px;">
-                                <a class="nav-link" href="shop_1.html" style="border-radius: 30px; background-color: red;color: #fff; width: 120px;padding: 5px;text-align: center;">Mua ngay</a>
-                                <a class="nav-link" href="#" style="color: #4a144b;margin-left: 10px;">Làm thế nào để đặt hàng?</a>
-                            </div>
-                        </div>
-                        <div class="time col-md-2 mt-5">
-                            <div class="mybox" style="border: 1px solid #fff;">
-                                <h5 class="text" style="color:red;font-size:30px;font-style:normal;font-weight:800">Giờ mở cửa:</h5>
-                                <div class="thoigian" style="background-color: pink;border-radius: 25%;">
-                                    <p class="time_on">Thứ 2 - Thứ 6<br>
-                                        09:00 - 16:00
-                                    </p>
-                                    <p class="time_on">Thứ 7 - Chủ nhật<br>
-                                        10:00 - 19:00
-                                    </p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="imgbanner1 col-md-5 offset-0">
-                            <img src="./img/baner.PNG" alt="" class="img-fluid">
-                        </div>
-                        <div class="link_icon col-md-6">
-                            <ul class="list-unstyled" style="margin-left: 30px;">
-                                <li class="list-inline-item"><a href="#"><img src="./img/icon_fb.PNG" alt="" style="border-radius: 15%;"></a></li>
-                                <li class="list-inline-item"><a href="#"><img src="./img/icon_ig.PNG" alt="" style="width: 54px;height: 54px;border-radius: 15%;"></a></li>
-                                <li class="list-inline-item"><a href="#"><img src="./img/icon_wt.PNG" alt="" style="width: 54px;height: 54px;border-radius: 15%;"></a></li>
-                                <li class="list-inline-item"><a href="#"><img src="./img/icon_inte.PNG" alt="" style="width: 54px;height: 54px;border-radius: 15%;"></a></li>
-                            </ul>
-                        </div>
-                        <div class="phoneOder col-md-6" style="height: 100px;">
-                            <div class="mybox2">
-                                <img src="./img/icon_phone.PNG" alt="" style="border-radius: 25%;">
-                                <div class="has-text-align-center-mobile">
-                                    <h4>Đặt hàng</h4>
-                                    <p>(+84)392067211</p>
-                                </div>
+                        <div class="col-md-12" >
+                            <div class="shop" style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                                <h1 style="color: #fff;">Shop</h1>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-    
-                <div class="cakes_and_bakes col-md-12 pb-5" style="background-color: #fff;">
-                    <div class="text_s3" style="text-align: center; margin-top: 80px;">
-                        <h5 style="color: red;">
-                            Cakes & Bakes
-                        </h5>
-                        <h1>
-                            Feel the Taste
-                        </h1>
-                    </div>
-                    <div class="row" style="justify-content: center; text-align: center;">
-                        <div class="col-md-2" style="border: 1px solid red; padding: 15px; margin: 15px; border-radius: 10%;">
-                            <div>
-                                <img src="./img/Coffee-Cake.png" alt="">
-                                <h3><a href="#" style="color: #4a144b;">Cofe Cake</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.…</p>
-                                <p><a href="#" style=" color: red;">Đọc thêm</a></p>
-                            </div>
+                <div id="page1" class="content2 col-md-12 pb-5 pt-5" style="background-color: #fff;">
+                    <div class="product-list">
+                        <div class="product-item" v-for="product in products" :key="product.id">
+                          <img :src="product.img" alt="product.name" width="350" height="350">
+                          <p style="font-weight: bold;">{{ product.name }}</p>
+                          <p>Giá {{ product.price }} VND</p>
+                          <button class="mua_ngay" @click="addToCart2(product)"><a class="text-decoration-none text-reset" href="shopping_cart.html">Mua ngay</a></button>
+                          <button class="them_gio_hang" @click="addToCart(product)"><i class="fas fa-shopping-cart"></i></button>
                         </div>
-                        <div class="col-md-2" style="border: 1px solid red; padding: 15px; margin: 15px; border-radius: 10%;">
-                            <div>
-                                <img src="./img/Creamy-Cup-Cake2.png" alt="">
-                                <h3><a href="#" style="color: #4a144b;">Cofe Cake</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.…</p>
-                                <p><a href="#" style=" color: red;">Đọc thêm</a></p>
-                            </div>
-                        </div>
-                        <div class="col-md-2" style="border: 1px solid red; padding: 15px; margin: 15px; border-radius: 10%;">
-                            <div>
-                                <img src="./img/Dry-Fruit-Cake3.png" alt="">
-                                <h3><a href="#" style="color: #4a144b;">Cofe Cake</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.…</p>
-                                <p><a href="#" style=" color: red;">Đọc thêm</a></p>
-                            </div>
-                        </div>
-                        <div class="col-md-2" style="border: 1px solid red; padding: 15px; margin: 15px; border-radius: 10%;">
-                            <div>
-                                <img src="./img/Fruit-Cake1.png" alt="">
-                                <h3><a href="#" style="color: #4a144b;">Cofe Cake</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.…</p>
-                                <p><a href="#" style=" color: red;">Đọc thêm</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="xem_them" style="text-align: center;">
-                        <button style="background-color: red;width: 100px;height: 40px;border: 1px solid #fff;margin-top: 20px;"><span><a href="#" style="color: #fff;">Xem Thêm</a></span></button>
-                    </div>
+                      </div>
                 </div>
     
-                <div class="content3 col-md-12 pb-5" style="background-color: #4a144b;">
-                    <div class="row" style="padding-top: 50px;">
-                        <div class="col-md-6">
-                            <img src="./img/baker-service-cake.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-md-6">
-                            <h5 style="color: red;">Cakes & Bakes</h5>
-                            <h1 style="color: #fff;">Chúng tôi làm ra những dịch vụ bánh và bánh ngọt tốt nhất</h1>
-                            <p style="color: #fff;">Nhận tin tức mới nhất trong hộp thư đến của bạn. Người ta sẽ quan sát thấy rằng các tầng lớp tinh hoa đang tiến hành giảm cân xảy ra cùng lúc với việc họ làm việc với rất nhiều đau đớn, nhưng chúng cũng xảy ra cùng lúc với việc họ làm việc với rất nhiều đau đớn. Ai là người đình chỉ bóng rổ? Consectetut adipiscing elitadipiscing eliterissed & ddo eiusmodetempor xảy ra khi chuyển dạ và đau đớn.</p>
-                            <div>
-                                <ul class="list-unstyled">
-                                    <li><a href="#" style="color: #fff;"><img src="./img/icon_xacminh.jpg" alt="" style="width: 20px;height: 20px;">Get latest news in your inbox. Consectetur elitadipiscing.</a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <ul class="list-unstyled">
-                                    <li><a href="#" style="color: #fff;"><img src="./img/icon_xacminh.jpg" alt="" style="width: 20px;height: 20px;">Get latest news in your inbox. Consectetur elitadipiscing.</a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <ul class="list-unstyled">
-                                    <li><a href="#" style="color: #fff;"><img src="./img/icon_xacminh.jpg" alt="" style="width: 20px;height: 20px;">Get latest news in your inbox. Consectetur elitadipiscing.</a></li>
-                                </ul>
-                            </div>
-                            <div class="xem_them">
-                                <button style="background-color: red;width: 100px;height: 40px;border: 1px solid #fff;margin-top: 20px;"><span><a href="#" style="color: #fff;">Xem Thêm</a></span></button>
+                <div class="content1 col-md-12 mt-5 mt-5" style="background-color: #fff;">
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <div id="PreviousPage">
+                                    <button type="submit" style="color: #4a144b;background-color: #fff;border: #fff;display: none;">Previous Page</button>
+                                </div>
+                                <div id="page1">
+                                    <a href="#" style="width: 28px;height: 40px;padding: 10px;color: #4a144b;background-color: red;">1</a>
+                                </div>
+                                <div id="page2">
+                                    <a  href="#" style="width: 28px;height: 40px;padding: 10px;color: #4a144b;">2</a>
+                                </div>
+                                <div id="page3">
+                                    <a href="#" style="width: 28px;height: 40px;padding: 10px;color: #4a144b;">3</a>
+                                </div>
+                                <div id="NextPage">
+                                    <button type="submit" style="color: #4a144b;background-color: #fff;border: #fff;">Next Page</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
     
-                <div class="content4 col-md-12 pb-5" style="background-color: pink;">
-                    <div class="row" style="padding-top: 50px;">
-                        <div class="col-md-6">
-                            <img src="./img/man.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-md-6">
-                            <h5>Liên hệ</h5>
-                            <h1>Bánh mì mới nướng ngon mỗi sáng</h1>
-                            <p>Nhận tin tức mới nhất trong hộp thư đến của bạn. Consectetur adipiscing elitadipiscing elits eddo eusmod tempor incididunt utlabore edolore magnased doeiusmod tempor incididunt ut labeet dolore magna aliqua.</p>
-                            <h5>Giờ mở cửa</h5>
-                            <p>Thứ hai - Thứ sáu: 09.00 - 16.00</p>
-                            <p>Thứ bảy - Chủ nhật: 10.00 - 19.00</p>
-                        </div>
-                        <div class="col-md-12">
-                            <form action="" style="background-color: #fff;padding-left: 20px;border-radius: 20px;padding-bottom: 30px;padding-top: 30px;">
-                                <label for=""><h3>Đặt bàn của bạn</h3></label><br>
-                                <label for=""><p>Nhận thông tin chi tiết về Email của bạn ngay bây giờ</p></label><br>
-                                <input type="text" placeholder="Tên của bạn" v-model="ten">
-                                <input type="text" placeholder="Email" v-model="email">
-                                <input type="text" placeholder="Số người" v-model="soNguoi">
-                                <input type="text" placeholder="Số điện thoại" v-model="Sdt"><br>
-                                <button type="button" style="background-color: red;width: 100px;height: 40px;border: 1px solid #fff;margin-top: 20px; color: #fff; font-weight: bold;" @click="checkMessage">Đặt ngay</button>
-                                <p style="color: red;font-weight: bold;">{{outputMessage}}</p>                                    
-                            </form>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="content4 col-md-12 pb-5" style="background-color: #4a144b;">
+                <div class="content4 col-md-12 pb-5 mt-5" style="background-color: #4a144b;">
                     <div class="row" style="padding-top: 50px;">
                         <div class="col-md-3">
                             <h4>Giúp đỡ</h4>
@@ -334,12 +283,58 @@
                         </div>
                     </div>
                 </div>
-    
-    
             </div>
         </div>
     </div>
     
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                products: [
+                { id: "P1", name: "Bánh Pháp Macarons", price: 10000, img: "./img/img_banh_phap/1.jpg" },
+                { id: "P2", name: "Bánh Tarte", price: 20000, img: "./img/img_banh_phap/2.jpg" },
+                { id: "P3", name: "Bánh Pháp Éclair", price: 30000, img: "./img/img_banh_phap/3.jpg" },
+                { id: "P4", name: "Kouign amann", price: 10000, img: "./img/img_banh_phap/4.jpg" },
+                { id: "P5", name: "Bánh Opera", price: 20000, img: "./img/img_banh_phap/5.jpg" },
+                { id: "P6", name: "Bánh Pháp Mille-feuille", price: 30000, img: "./img/img_banh_phap/6.jpg" },
+                { id: "P7", name: "Paris-Brest", price: 10000, img: "./img/img_banh_phap/7.png" },
+                { id: "P8", name: "Saint-honoré", price: 20000, img: "./img/img_banh_phap/8.png" },
+                { id: "P9", name: "Bánh Pháp Religieuse", price: 30000, img: "./img/img_banh_phap/9.jpg" }
+                ]
+            },
+            methods: {
+                addToCart(product) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartItem = cart.find(item => item.id === product.id);
+                if (cartItem) {
+                    cartItem.quantity++;
+                } else {
+                    cart.push({
+                    ...product,
+                    quantity: 1
+                    });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert('Đã thêm vào giỏ hàng!');
+                },
+                addToCart2(product) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartItem = cart.find(item => item.id === product.id);
+                if (cartItem) {
+                    cartItem.quantity++;
+                } else {
+                    cart.push({
+                    ...product,
+                    quantity: 1
+                    });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                }
+
+            }
+            });
+    </script>
     
 
 
@@ -348,7 +343,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/index_vue.js"></script>
+
     
 </body>
 </html>
