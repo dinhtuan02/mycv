@@ -126,6 +126,62 @@
                 </div>
             </nav>
         </div>
+        <!-- Account Modal for Login and Register -->
+        <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="accountModalLabel">Đăng nhập / Đăng ký</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Tabs for Login and Register -->
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Đăng nhập</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Đăng ký</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <!-- Login Form -->
+                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="loginUsername" class="form-label">Tên tài khoản</label>
+                                        <input type="text" class="form-control" id="loginUsername" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="loginPassword" class="form-label">Mật khẩu</label>
+                                        <input type="password" class="form-control" id="loginPassword" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                                </form>
+                            </div>
+                            <!-- Register Form -->
+                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="registerUsername" class="form-label">Tên tài khoản</label>
+                                        <input type="text" class="form-control" id="registerUsername" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="registerEmail" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerPassword" class="form-label">Mật khẩu</label>
+                                        <input type="password" class="form-control" id="registerPassword" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Đăng ký</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="banner" style="margin-top: 60px;">
             <div class="row content" >
                 <div class="content1 col-md-12 pb-5" style="padding: 0;">
