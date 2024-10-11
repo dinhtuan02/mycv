@@ -131,7 +131,7 @@
                         <div class="icon">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#accountModal"><i class="fa-solid fa-user"></i></a>
                             <a href="shopping_cart.html"><i class="fas fa-shopping-cart"></i></a>
-                            <a href=""><i class="fa-solid fa-heart trai_tim"></i></a>
+                            <a href="sp_yeu_thich.html"><i class="fa-solid fa-heart trai_tim"></i></a>
                             <a href=""><i class="fa-solid fa-magnifying-glass tim_kiem"></i></a>
                         </div>
                     </header>
@@ -209,7 +209,7 @@
                 <div id="page1" class="content2 col-md-12 pb-5 pt-5" style="background-color: #fff;">
                     <div class="product-list">
                         <div class="product-item" v-for="product in products" :key="product.id">
-                            <a href=""><i class="fa-solid text-danger fa-heart sp_yeu_thich"></i></a>
+                            <a href=""><i class="fa-solid text-danger fa-heart sp_yeu_thich" @click="addToCart(product)"></i></a>
                           <img :src="product.img" alt="product.name" width="350" height="350">
                           <p style="font-weight: bold;">{{ product.name }}</p>
                           <p>Giá {{ product.price }} VND</p>
