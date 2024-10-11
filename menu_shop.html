@@ -69,10 +69,6 @@
             transform: translateY(-5px); /* Nổi lên */
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng */
         }
-        .sp_yeu_thich{
-            font-size: 24px;
-            float: right;
-        }
       </style>
 </head>
 <body>
@@ -209,12 +205,9 @@
                 <div id="page1" class="content2 col-md-12 pb-5 pt-5" style="background-color: #fff;">
                     <div class="product-list">
                         <div class="product-item" v-for="product in products" :key="product.id">
-                            <a href=""><i class="fa-solid text-danger fa-heart sp_yeu_thich"></i></a>
                           <img :src="product.img" alt="product.name" width="350" height="350">
-                          <p style="font-weight: bold;">{{ product.name }}</p>
-                          <p>Giá {{ product.price }} VND</p>
-                          <button class="mua_ngay" @click="addToCart2(product)"><a class="text-decoration-none text-reset" href="shopping_cart.html">Mua ngay</a></button>
-                          <button class="them_gio_hang" @click="addToCart(product)"><i class="fas fa-shopping-cart"></i></button>
+                          <p style="font-weight: bold; padding-top: 20px;">{{ product.name }}</p>
+                          <button class="mua_ngay"><a class="text-decoration-none text-reset" :href="product.src">Mua ngay</a></button>
                         </div>
                       </div>
                 </div>
@@ -297,48 +290,12 @@
             el: '#app',
             data: {
                 products: [
-                { id: "S1", name: "Sinh tố Bơ", price: 10000, img: "./img/img_do_uong/nuoc_ep_hoa_qua/1.jpg" },
-                { id: "S2", name: "Sinh tố chuối vị Socola", price: 20000, img: "./img/img_do_uong/nuoc_ep_hoa_qua/2.png" },
-                { id: "S3", name: "Sinh tố cam sữa chua", price: 30000, img: "./img/img_do_uong/nuoc_ep_hoa_qua/3.png" },
-                { id: "S4", name: "Sinh tố nho", price: 10000, img: "./img/img_do_uong/nuoc_ep_hoa_qua/4.jpg" },
-                { id: "S5", name: "Sinh tố chuối", price: 20000, img: "./img/img_do_uong/nuoc_ep_hoa_qua/5.jpg" },
-                { id: "S6", name: "Sinh tố Dưa hấu", price: 30000, img: "./img/img_do_uong/nuoc_ep_hoa_qua/6.jpg" },
-                { id: "S7", name: "Sinh tố dứa", price: 10000, img: "./img/img_do_uong/nuoc_ep_hoa_qua/7.jpg" },
-                { id: "S8", name: "Sinh tố đậu xanh rau má", price: 20000, img: "./img/img_do_uong/nuoc_ep_hoa_qua/8.jpg" },
-                { id: "S9", name: "Sinh tố dâu tây", price: 30000, img: "./img/img_do_uong/nuoc_ep_hoa_qua/9.jpg" }
+                    { id: 1, name: "Các Loại Bánh Ngọt", img: "./img/img_banh_anh/Bánh Sandwich Victoria.jpg", src: "sp_banh_anh.html" },
+                    { id: 2, name: "Đồ Uống", img: "./img/img_do_uong/nuoc_ep_hoa_qua/9.jpg", src: "sp_sinh_to.html" },
+                    { id: 3, name: "Đồ Ăn Nhẹ", img: "./img/img_do_an_nhe/sp_kem/9.jpg", src: "sp_kem.html" }
                 ]
             },
-            methods: {
-                addToCart(product) {
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                const cartItem = cart.find(item => item.id === product.id);
-                if (cartItem) {
-                    cartItem.quantity++;
-                } else {
-                    cart.push({
-                    ...product,
-                    quantity: 1
-                    });
-                }
-                localStorage.setItem('cart', JSON.stringify(cart));
-                alert('Đã thêm vào giỏ hàng!');
-                },
-                addToCart2(product) {
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                const cartItem = cart.find(item => item.id === product.id);
-                if (cartItem) {
-                    cartItem.quantity++;
-                } else {
-                    cart.push({
-                    ...product,
-                    quantity: 1
-                    });
-                }
-                localStorage.setItem('cart', JSON.stringify(cart));
-                }
-
-            }
-            });
+        });
     </script>
     
 

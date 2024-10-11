@@ -69,6 +69,10 @@
             transform: translateY(-5px); /* Nổi lên */
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng */
         }
+        .sp_yeu_thich{
+            font-size: 24px;
+            float: right;
+        }
       </style>
 </head>
 <body>
@@ -205,6 +209,7 @@
                 <div id="page1" class="content2 col-md-12 pb-5 pt-5" style="background-color: #fff;">
                     <div class="product-list">
                         <div class="product-item" v-for="product in products" :key="product.id">
+                            <a href=""><i class="fa-solid text-danger fa-heart sp_yeu_thich"></i></a>
                           <img :src="product.img" alt="product.name" width="350" height="350">
                           <p style="font-weight: bold;">{{ product.name }}</p>
                           <p>Giá {{ product.price }} VND</p>
