@@ -39,65 +39,67 @@
 <body>
     <div id="app">
         <div class="menu">
-            <!-- Navigation Bar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
-                <div class="container">
-                    <header>
-                        <div class="logo">
-                            <a href="index.html" class="logo"><img src="./img/lg.png" alt=""></a>
-                        </div>
-            
-                        <input type="checkbox" id="menu-bar">
-                        <label for="menu-bar"><i class="fas fa-bars"></i></label>
-                        
-                        <div class="navbar">
-                            <ul>
-                                <li><a href="index.html">Trang chủ</a></li>
-                                <li><a href="gioithieu.html">Giới thiệu</a></li>
-                                <li><a href="#">Sản phẩm <i class="fa-solid fa-chevron-down"></i></a>
-                                    <!-- Các Loại Bánh Ngọt -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Navigation Bar -->
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
+                        <div class="container">
+                            <header>
+                                <div class="logo">
+                                    <a href="index.html" class="logo"><img src="./img/lg.png" alt=""></a>
+                                </div>
+                                <input type="checkbox" id="menu-bar">
+                                <label for="menu-bar"><i class="fas fa-bars"></i></label>
+                                <div class="navbar">
                                     <ul>
-                                        <li>
-                                            <a href="#">Các Loại Bánh Ngọt<i class="fa-solid fa-chevron-down i_menu2"></i></a>
+                                        <li><a href="index.html">Trang chủ</a></li>
+                                        <li><a href="#">Sản phẩm <i class="fa-solid fa-chevron-down"></i></a>
+                                            <!-- Các Loại Bánh Ngọt -->
                                             <ul>
-                                                <li><a href="sp_banh_anh.html">Bánh Ngọt Nước Anh</a></li>
-                                                <li><a href="sp_banh_phap.html">Bánh Ngọt Nước Pháp</a></li>
-                                            </ul>
-                                        </li>  
-                                        
-                                        <!-- Đồ Uống -->
-                                        <li>
-                                            <a href="#">Đồ Uống <i class="fa-solid fa-chevron-down i_menu2"></i></a>
-                                            <ul>
-                                                <li><a href="sp_sinh_to.html">Sinh Tố</a></li>
-                                                <li><a href="#">Trà Sữa</a></li>
-                                            </ul>
-                                        </li>  
-            
-                                        <!-- Đồ Ăn Nhẹ -->
-                                        <li>
-                                            <a href="#">Đồ Ăn Nhẹ<i class="fa-solid fa-chevron-down i_menu2"></i></a>
-                                            <ul>
-                                                <li><a href="sp_kem.html">Kem</a></li>
-                                                <li><a href="#">...</a></li>
-                                            </ul>
-                                        </li> 
-                                    </ul>                                                                       
-                                </li>
-                                <li><a href="#">Tin tức</a></li>
-                                <li><a href="lienhe.html">Liên hệ</a></li>
-                            </ul>
+                                                <li>
+                                                    <a href="#">Các Loại Bánh Ngọt<i class="fa-solid fa-chevron-down i_menu2"></i></a>
+                                                    <ul>
+                                                        <li><a href="sp_banh_anh.html">Bánh Ngọt Nước Anh</a></li>
+                                                        <li><a href="sp_banh_phap.html">Bánh Ngọt Nước Pháp</a></li>
+                                                    </ul>
+                                                </li>  
+                                                
+                                                <!-- Đồ Uống -->
+                                                <li>
+                                                    <a href="#">Đồ Uống <i class="fa-solid fa-chevron-down i_menu2"></i></a>
+                                                    <ul>
+                                                        <li><a href="sp_sinh_to.html">Sinh Tố</a></li>
+                                                        <li><a href="#">Trà Sữa</a></li>
+                                                    </ul>
+                                                </li>  
+                    
+                                                <!-- Đồ Ăn Nhẹ -->
+                                                <li>
+                                                    <a href="#">Đồ Ăn Nhẹ<i class="fa-solid fa-chevron-down i_menu2"></i></a>
+                                                    <ul>
+                                                        <li><a href="sp_kem.html">Kem</a></li>
+                                                        <li><a href="#">...</a></li>
+                                                    </ul>
+                                                </li> 
+                                            </ul>                                                                       
+                                        </li>
+                                        <li><a href="#">Tin tức</a></li>
+                                        <li><a href="gioithieu.html">Giới thiệu</a></li>
+                                        <li><a href="lienhe.html">Liên hệ</a></li>
+                                    </ul>
+                                </div>
+                        
+                                <div class="icon">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#accountModal"><i class="fa-solid fa-user"></i></a>
+                                    <a href="shopping_cart.html"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href=""><i class="fa-solid fa-heart trai_tim"></i></a>
+                                    <a href=""><i class="fa-solid fa-magnifying-glass tim_kiem"></i></a>
+                                </div>
+                            </header>
                         </div>
-                
-                        <div class="icon">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#accountModal"><i class="fa-solid fa-user"></i></a>
-                            <a href="shopping_cart.html"><i class="fas fa-shopping-cart"></i></a>
-                            <a href=""><i class="fa-solid fa-heart trai_tim"></i></a>
-                            <a href=""><i class="fa-solid fa-magnifying-glass tim_kiem"></i></a>
-                        </div>
-                    </header>
+                    </nav>
                 </div>
-            </nav>
+            </div>
         </div>
         <!-- Account Modal for Login and Register -->
         <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
@@ -173,15 +175,10 @@
                         </div>
 
                         <div class="col-md-5 chu_cakes_and_bakes">
-                            <p><h4 style="color: #de3654; font-weight: bold;">OUR STORY</h4></p>
-                            <p><h2 style="color: #4a144b; font-style: italic;">Baking With Passion And Tradition</h2></p>
-                            <p class="font_p">At [Your Bakery Name], baking is more than just a jobit’s a labor of love. Our team of talented bakers pours their heart and soul
-                                into every batch of cookies, cakes, and pastries, infusing each creation with passion and creativity. Whether it’s the rich aroma of freshly baked bread filling the air or 
-                                the sight of colorful cupcakes adorning our display cases, we strive to evoke a sense of joy and nostalgia with every bite.
-                           </p>
-                           <p class="font_p">At [Your Bakery Name], baking is more than just a jobit’s a labor of love. Our team of talented bakers pours their heart and soul
-                                into every batch of cookies, cakes, and pastries, infusing each creation with passion and creativity. Whether it’s the rich aroma of freshly baked bread filling the air or 
-                                the sight of colorful cupcakes adorning our display cases, we strive to evoke a sense of joy and nostalgia with every bite.
+                            <p><h4 style="color: #de3654; font-weight: bold;">CÂU CHUYỆN CỦA CHÚNG TÔI</h4></p>
+                            <p><h2 style="color: #4a144b; font-style: italic;">Nướng bánh với niềm đam mê và truyền thống</h2></p>
+                            <p class="font_p">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                             </p>
                         </div>
                     </div>
@@ -191,15 +188,10 @@
                 <div class="content3 col-md-12 pb-5">
                     <div class="row" style="padding-top: 50px;">
                         <div class="col-md-5 chu_cakes_and_bakes">
-                            <p><h4 style="color: #de3654; font-weight: bold;">ABOUT US</h4></p>
-                            <p><h2 style="color: #4a144b; font-style: italic;">Discover Our Sweet Beginnings</h2></p>
-                            <p class="font_p">At [Your Bakery Name], baking is more than just a jobit’s a labor of love. Our team of talented bakers pours their heart and soul
-                                into every batch of cookies, cakes, and pastries, infusing each creation with passion and creativity. Whether it’s the rich aroma of freshly baked bread filling the air or 
-                                the sight of colorful cupcakes adorning our display cases, we strive to evoke a sense of joy and nostalgia with every bite.
-                           </p>
-                           <p class="font_p">At [Your Bakery Name], baking is more than just a jobit’s a labor of love. Our team of talented bakers pours their heart and soul
-                                into every batch of cookies, cakes, and pastries, infusing each creation with passion and creativity. Whether it’s the rich aroma of freshly baked bread filling the air or 
-                                the sight of colorful cupcakes adorning our display cases, we strive to evoke a sense of joy and nostalgia with every bite.
+                            <p><h4 style="color: #de3654; font-weight: bold;">VỀ CHÚNG TÔI</h4></p>
+                            <p><h2 style="color: #4a144b; font-style: italic;">Khám phá sự khởi đầu ngọt ngào của chúng tôi</h2></p>
+                            <p class="font_p">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                             </p>
                         </div>
 
@@ -216,15 +208,10 @@
                         </div>
 
                         <div class="col-md-5 chu_cakes_and_bakes">
-                            <p><h4 style="color: #de3654; font-weight: bold;">CREATING SWEET MOMENTS</h4></p>
-                            <p><h2 style="color: #4a144b; font-style: italic;">A Slice Of Bakery History</h2></p>
-                            <p class="font_p">At [Your Bakery Name], baking is more than just a jobit’s a labor of love. Our team of talented bakers pours their heart and soul
-                                into every batch of cookies, cakes, and pastries, infusing each creation with passion and creativity. Whether it’s the rich aroma of freshly baked bread filling the air or 
-                                the sight of colorful cupcakes adorning our display cases, we strive to evoke a sense of joy and nostalgia with every bite.
-                           </p>
-                           <p class="font_p">At [Your Bakery Name], baking is more than just a jobit’s a labor of love. Our team of talented bakers pours their heart and soul
-                                into every batch of cookies, cakes, and pastries, infusing each creation with passion and creativity. Whether it’s the rich aroma of freshly baked bread filling the air or 
-                                the sight of colorful cupcakes adorning our display cases, we strive to evoke a sense of joy and nostalgia with every bite.
+                            <p><h4 style="color: #de3654; font-weight: bold;">TẠO RA NHỮNG KHOẢNH KHẮC NGỌT NGÀO</h4></p>
+                            <p><h2 style="color: #4a144b; font-style: italic;">Một lát cắt của lịch sử bánh mì</h2></p>
+                            <p class="font_p">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                             </p>
                         </div>
                     </div>

@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="style/responsive_index.css">
     <script src="./js/vue.js"></script>
     
+    <style>
+        .sp{
+            width: 390px;
+        }
+        /* .text_index{
+            width: 220px;
+        } */
+    </style>
 </head>
 <body>
     <div id="app">
@@ -21,65 +29,61 @@
                     <!-- Navigation Bar -->
                     <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
                         <div class="container">
-                            <header>
-                                <div class="logo">
-                                    <a href="index.html" class="logo"><img src="./img/lg.png" alt=""></a>
-                                </div>
-                    
-                                <input type="checkbox" id="menu-bar">
-                                <label for="menu-bar"><i class="fas fa-bars"></i></label>
-                                
-                                <div class="navbar">
-                                    <ul>
-                                        <li><a href="index.html">Trang chủ</a></li>
-                                        <li><a href="gioithieu.html">Giới thiệu</a></li>
-                                        <li><a href="#">Sản phẩm <i class="fa-solid fa-chevron-down"></i></a>
-                                            <!-- Các Loại Bánh Ngọt -->
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Các Loại Bánh Ngọt<i class="fa-solid fa-chevron-down i_menu2"></i></a>
-                                                    <ul>
-                                                        <li><a href="sp_banh_anh.html">Bánh Ngọt Nước Anh</a></li>
-                                                        <li><a href="sp_banh_phap.html">Bánh Ngọt Nước Pháp</a></li>
-                                                    </ul>
-                                                </li>  
-                                                
-                                                <!-- Đồ Uống -->
-                                                <li>
-                                                    <a href="#">Đồ Uống <i class="fa-solid fa-chevron-down i_menu2"></i></a>
-                                                    <ul>
-                                                        <li><a href="sp_sinh_to.html">Sinh Tố</a></li>
-                                                        <li><a href="#">Trà Sữa</a></li>
-                                                    </ul>
-                                                </li>  
-                    
-                                                <!-- Đồ Ăn Nhẹ -->
-                                                <li>
-                                                    <a href="#">Đồ Ăn Nhẹ<i class="fa-solid fa-chevron-down i_menu2"></i></a>
-                                                    <ul>
-                                                        <li><a href="sp_kem.html">Kem</a></li>
-                                                        <li><a href="#">...</a></li>
-                                                    </ul>
-                                                </li> 
-                                            </ul>                                                                       
+                          <header>
+                            <div class="logo">
+                              <a href="index.html" class="logo">
+                                <img src="./img/lg.png" alt="Logo">
+                              </a>
+                            </div>
+                            <input type="checkbox" id="menu-bar">
+                            <label for="menu-bar">
+                              <i class="fas fa-bars"></i>
+                            </label>
+                  
+                            <div class="navbar">
+                              <ul>
+                                <li v-for="(item, index) in menuItems" :key="index">
+                                  <a :href="item.link || '#'">
+                                    {{ item.name }}
+                                    <i v-if="item.children && item.children.length" class="fa-solid fa-chevron-down"></i>
+                                  </a>
+                  
+                                  <ul v-if="item.children && item.children.length">
+                                    <li v-for="(subItem, subIndex) in item.children" :key="subIndex">
+                                      <a :href="subItem.link || '#'">
+                                        {{ subItem.name }}
+                                        <i v-if="subItem.children && subItem.children.length" class="fa-solid fa-chevron-down i_menu2"></i>
+                                      </a>
+                  
+                                      <ul v-if="subItem.children && subItem.children.length">
+                                        <li v-for="(subSubItem, subSubIndex) in subItem.children" :key="subSubIndex">
+                                          <a :href="subSubItem.link || '#'">{{ subSubItem.name }}</a>
                                         </li>
-                                        <li><a href="#">Tin tức</a></li>
-                                        <li><a href="lienhe.html">Liên hệ</a></li>
-                                    </ul>
-                                </div>
-                        
-                                <div class="icon">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#accountModal"><i class="fa-solid fa-user"></i></a>
-                                    <a href="shopping_cart.html"><i class="fas fa-shopping-cart"></i></a>
-                                    <a href=""><i class="fa-solid fa-heart trai_tim"></i></a>
-                                    <a href=""><i class="fa-solid fa-magnifying-glass tim_kiem"></i></a>
-                                </div>
-                            </header>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="icon">
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#accountModal">
+                                <i class="fa-solid fa-user"></i>
+                              </a>
+                              <a href="shopping_cart.html">
+                                <i class="fas fa-shopping-cart"></i>
+                              </a>
+                              <a href="">
+                                <i class="fa-solid fa-heart trai_tim"></i>
+                              </a>
+                              <a href="">
+                                <i class="fa-solid fa-magnifying-glass tim_kiem"></i>
+                              </a>
+                            </div>
+                          </header>
                         </div>
                     </nav>
                 </div>
             </div>
-            
         </div>
         <!-- Account Modal for Login and Register -->
         <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
@@ -153,9 +157,9 @@
                             <div class="mybox" style="border: 1px solid #fff;">
                                 <h5 class="text" style="color:red;font-size:30px;font-style:normal;font-weight:800">Giờ mở cửa:</h5>
                                 <div class="thoigian" style="background-color: pink;border-radius: 25%;">
-                                    <p class="time_on">Thứ 2 - Thứ 6<br>
-                                        09:00 - 16:00
-                                    </p>
+                                    <div class="time_on">Thứ 2 - Thứ 6
+                                        <p>09:00 - 16:00</p>
+                                    </div>
                                     <p class="time_on">Thứ 7 - Chủ nhật<br>
                                         10:00 - 19:00
                                     </p>
@@ -200,32 +204,32 @@
                         <div class="col-md-2" style="border: 1px solid red; padding: 15px; margin: 15px; border-radius: 10%;">
                             <div>
                                 <img src="./img/Coffee-Cake.png" alt="">
-                                <h3><a href="#" style="color: #4a144b;">Cofe Cake</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.…</p>
+                                <h3><a href="#" style="color: #4a144b;">Bánh Macaron</a></h3>
+                                <p>Ngọt nhẹ, béo bùi từ hạnh nhân, phần nhân có thể là ganache, mứt trái cây hoặc kem bơ...</p>
                                 <p><a href="#" style=" color: red;">Đọc thêm</a></p>
                             </div>
                         </div>
                         <div class="col-md-2" style="border: 1px solid red; padding: 15px; margin: 15px; border-radius: 10%;">
                             <div>
                                 <img src="./img/Creamy-Cup-Cake2.png" alt="">
-                                <h3><a href="#" style="color: #4a144b;">Cofe Cake</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.…</p>
+                                <h3><a href="#" style="color: #4a144b;">Bánh Tiramisu</a></h3>
+                                <p>Mềm mại, ngọt dịu và đậm đà với chút vị đắng từ cà phê và cacao. Kem mascarpone mang lại cảm giác béo ngậy...</p>
                                 <p><a href="#" style=" color: red;">Đọc thêm</a></p>
                             </div>
                         </div>
                         <div class="col-md-2" style="border: 1px solid red; padding: 15px; margin: 15px; border-radius: 10%;">
                             <div>
                                 <img src="./img/Dry-Fruit-Cake3.png" alt="">
-                                <h3><a href="#" style="color: #4a144b;">Cofe Cake</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.…</p>
+                                <h3><a href="#" style="color: #4a144b;">Bánh Croissant</a></h3>
+                                <p>Bơ thơm, giòn ngoài mềm trong, lớp bột nhiều tầng mỏng nhờ kỹ thuật cán bột với bơ...</p>
                                 <p><a href="#" style=" color: red;">Đọc thêm</a></p>
                             </div>
                         </div>
                         <div class="col-md-2" style="border: 1px solid red; padding: 15px; margin: 15px; border-radius: 10%;">
                             <div>
                                 <img src="./img/Fruit-Cake1.png" alt="">
-                                <h3><a href="#" style="color: #4a144b;">Cofe Cake</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.…</p>
+                                <h3><a href="#" style="color: #4a144b;">Bánh Cheesecake</a></h3>
+                                <p>Mịn mượt, béo ngậy với lớp kem phô mai, đế bánh thường làm từ bánh quy nghiền...</p>
                                 <p><a href="#" style=" color: red;">Đọc thêm</a></p>
                             </div>
                         </div>
@@ -241,26 +245,78 @@
                             <img src="./img/baker-service-cake.png" alt="" class="img-fluid">
                         </div>
                         <div class="col-md-6">
-                            <h5 style="color: red;">Bánh & Đồ Nướng</h5>
-                            <h1 style="color: #fff;">Chúng tôi làm ra những chiếc bánh và bánh ngọt tốt nhất</h1>
-                            <p style="color: #fff;">Nhận tin tức mới nhất trong hộp thư đến của bạn.</p>
-                            <div>
-                                <ul class="list-unstyled">
-                                    <li><a href="#" style="color: #fff;"><img src="./img/icon_xacminh.jpg" alt="" style="width: 20px;height: 20px;">Nhận tin tức mới nhất trong hộp thư đến của bạn.</a></li>
-                                </ul>
+                            <h2 style="color: red; text-align: center;">Sản Phẩm Yêu Thích</h2>
+                            <div class="d-flex">
+                                <div class="d-flex sp">
+                                    <div>
+                                        <img src="./img/Cupcake-Carnival0.png" alt="" class="img-fluid" style="height: 170px;width: 170px;border-radius: 10px;">
+                                    </div>
+                                    <div class="text_index" style="padding-left: 10px; text-align: center; padding-top: 20px;">
+                                        <div style="color: #fff;">
+                                            <h5>Bánh Cupcake Carnival</h5>
+                                        </div>
+                                        <div style="color: #fff;">
+                                            Giá: 20000 VNĐ
+                                        </div>
+                                        <div>
+                                            <button type="button" style="background-color: red;width: 80px;height: 30px;border: 1px solid #fff;margin-top: 10px; border-radius: 5px;">Mua ngay</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex sp" style="padding-left: 30px;">
+                                    <div>
+                                        <img src="./img/Specialty-Breads1.png" alt="" class="img-fluid" style="height: 170px;width: 170px;border-radius: 10px;">
+                                    </div>
+                                    <div class="text_index" style="padding-left: 10px; text-align: center;padding-top: 20px;">
+                                        <div style="color: #fff;">
+                                            <h5>Bánh Specialty Breads</h5>
+                                        </div>
+                                        <div style="color: #fff;">
+                                            Giá: 20000 VNĐ
+                                        </div>
+                                        <div>
+                                            <button type="button" style="background-color: red;width: 80px;height: 30px;border: 1px solid #fff;margin-top: 10px; border-radius: 5px;">Mua ngay</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <ul class="list-unstyled">
-                                    <li><a href="#" style="color: #fff;"><img src="./img/icon_xacminh.jpg" alt="" style="width: 20px;height: 20px;">Nhận tin tức mới nhất trong hộp thư đến của bạn.</a></li>
-                                </ul>
+                            <div class="d-flex" style="margin-top: 40px;">
+                                <div class="d-flex sp">
+                                    <div>
+                                        <img src="./img/Pastries2.png" alt="" class="img-fluid" style="height: 170px;width: 170px;border-radius: 10px;">
+                                    </div>
+                                    <div class="text_index" style="padding-left: 10px; text-align: center; padding-top: 20px;">
+                                        <div style="color: #fff;">
+                                            <h5>Bánh Pastries</h5>
+                                        </div>
+                                        <div style="color: #fff;">
+                                            Giá: 20000 VNĐ
+                                        </div>
+                                        <div>
+                                            <button type="button" style="background-color: red;width: 80px;height: 30px;border: 1px solid #fff;margin-top: 10px; border-radius: 5px;">Mua ngay</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex sp" style="padding-left: 30px;">
+                                    <div>
+                                        <img src="./img/Cookies3.png" alt="" class="img-fluid" style="height: 170px;width: 170px;border-radius: 10px;">
+                                    </div>
+                                    <div class="text_index" style="padding-left: 10px; text-align: center;padding-top: 20px;">
+                                        <div style="color: #fff;">
+                                            <h5>Bánh Cookies</h5>
+                                        </div>
+                                        <div style="color: #fff;">
+                                            Giá: 20000 VNĐ
+                                        </div>
+                                        <div>
+                                            <button type="button" style="background-color: red;width: 80px;height: 30px;border: 1px solid #fff;margin-top: 10px; border-radius: 5px;">Mua ngay</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <ul class="list-unstyled">
-                                    <li><a href="#" style="color: #fff;"><img src="./img/icon_xacminh.jpg" alt="" style="width: 20px;height: 20px;">Nhận tin tức mới nhất trong hộp thư đến của bạn.</a></li>
-                                </ul>
-                            </div>
-                            <div class="xem_them">
-                                <button style="background-color: red;width: 100px;height: 40px;border: 1px solid #fff;margin-top: 20px;"><span><a href="#" style="color: #fff;">Xem Thêm</a></span></button>
+                            
+                            <div class="xem_them" style="text-align: center;">
+                                <button style="background-color: red;width: 100px;height: 40px;border: 1px solid #fff;margin-top: 20px; border-radius: 5px;"><span><a href="#" style="color: #fff;">Xem Thêm</a></span></button>
                             </div>
                         </div>
                     </div>
@@ -280,7 +336,6 @@
                             <p>Thứ bảy - Chủ nhật: 10.00 - 19.00</p>
                         </div>
                         <div class="col-md-12">
-                            
                             <form action="" style="background-color: #fff;padding-left: 20px;border-radius: 20px;padding-bottom: 30px;padding-top: 30px;">
                                 <label for=""><h3>Đặt bàn của bạn</h3></label><br>
                                 <label for=""><p>Nhận thông tin chi tiết về Email của bạn ngay bây giờ</p></label><br>
@@ -351,21 +406,50 @@
         var index = new Vue({
             el: '#app',
             data: {
-                ten: '',       // Biến lưu trữ thông điệp
+                ten: '',       // Biến lưu trữ thông tin đặt bàn
                 email:'',
                 soNguoi:'',
                 Sdt:'',
-                // outputMessage: ''  // Biến lưu trữ kết quả để hiển thị
+                menuItems: [
+                    { name: "Trang chủ", link: "index.html" },
+                    {
+                        name: "Sản phẩm",
+                        children: [
+                        {
+                            name: "Các Loại Bánh Ngọt",
+                            children: [
+                            { name: "Bánh Ngọt Nước Anh", link: "sp_banh_anh.html" },
+                            { name: "Bánh Ngọt Nước Pháp", link: "sp_banh_phap.html" },
+                            ],
+                        },
+                        {
+                            name: "Đồ Uống",
+                            children: [
+                            { name: "Sinh Tố", link: "sp_sinh_to.html" },
+                            { name: "Trà Sữa", link: "#" },
+                            ],
+                        },
+                        {
+                            name: "Đồ Ăn Nhẹ",
+                            children: [
+                            { name: "Kem", link: "sp_kem.html" },
+                            { name: "...", link: "#" },
+                            ],
+                        },
+                        ],
+                    },
+                    { name: "Tin tức", link: "#" },
+                    { name: "Giới thiệu", link: "gioithieu.html" },
+                    { name: "Liên hệ", link: "lienhe.html" },
+                ],
             },
             methods: {
                 checkMessage() {
-                    // Nếu thông điệp không rỗng, hiển thị nó
+                    // Kiểm tra thông tin đặt bàn
                     if (this.ten.trim()  !== '' &&  this.email.trim()  !== '' && this.soNguoi.trim()  !== '' && this.Sdt.trim()  !== '') {
                         alert("Đặt bàn thành công")
-                    // this.outputMessage = 'Cảm ơn bạn đã gửi tin nhắn. Tin nhắn đã được gửi đến bộ phận xử lí của cửa hàng.';
                     } else {
                         alert("Bạn cần điền đầy đủ thông tin để đặt bàn")
-                    //this.outputMessage = 'Bạn cần điền đầy đủ thông tin để đặt bàn'; // Nếu 1 trong input rỗng, không hiển thị gì
                     }
                 }
             }
