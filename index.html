@@ -158,11 +158,11 @@
                                 <h5 class="text" style="color:red;font-size:30px;font-style:normal;font-weight:800">Giờ mở cửa:</h5>
                                 <div class="thoigian" style="background-color: pink;border-radius: 25%;">
                                     <div class="time_on">Thứ 2 - Thứ 6
-                                        <p>09:00 - 16:00</p>
+                                        <p>{{thu2_thu6}}</p>
                                     </div>
-                                    <p class="time_on">Thứ 7 - Chủ nhật<br>
-                                        10:00 - 19:00
-                                    </p>
+                                    <div class="time_on">Thứ 7 - Chủ nhật
+                                        <p>{{thu7_cn}}</p>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -410,6 +410,8 @@
                 email:'',
                 soNguoi:'',
                 Sdt:'',
+                thu2_thu6:'09:00 - 16:00',
+                thu7_cn:'09:00 - 18:00',
                 menuItems: [
                     { name: "Trang chủ", link: "index.html" },
                     {
